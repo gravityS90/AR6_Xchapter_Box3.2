@@ -2,12 +2,12 @@ library(ncdf4)
 
 # Make fixed observational mask
 fixed_mask <- function(
-             fin,                                                               # Input file
-		         in_variable,                                                       # Input variable
-					   out_variable,                                                      # Output variable
-					   raw_period,                                                        # Input period
-					   sel_period,                                                        # Output period
-					   fou){                                                              # Output file
+                       fin,                                                               # Input file
+                       in_variable,                                                       # Input variable
+                       out_variable,                                                      # Output variable
+                       raw_period,                                                        # Input period
+                       sel_period,                                                        # Output period
+                       fou){                                                              # Output file
  # Input period	
  raw.syr <- raw_period[1]
  raw.eyr <- raw_period[2]
@@ -55,11 +55,7 @@ fixed_mask <- function(
  # Set variables information
  fillvalue <- 1e32
  dlname    <- "Fixed mask"
- mask.def  <- ncvar_def(
-                    "mask","none",
-		                list(xdim,ydim),
-		                fillvalue,dlname,
-        						prec="single")
+ mask.def  <- ncvar_def("mask","none",list(xdim,ydim),fillvalue,dlname,prec="single")
  # Open nc file which is writed
  ncfname <- paste(fou,sep="")
  ncout   <- nc_create(ncfname,list(mask.def))
