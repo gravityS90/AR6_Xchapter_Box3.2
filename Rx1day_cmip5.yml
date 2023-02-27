@@ -1,0 +1,195 @@
+# ESMValTool
+# recipe_example_r.yml
+---
+documentation:
+  description: Recipe for example diagnostic written in R.
+
+  authors:
+    - arnone_enrico
+
+  maintainer:
+    - andela_bouwe
+
+datasets:
+  # Historical
+  - {dataset: ACCESS1-0, project: CMIP5, exp: historical, ensemble: r1i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: bcc-csm1-1, project: CMIP5, exp: historical, ensemble: r1i1p1, start_year: 1850, end_year: 2012}
+  - {dataset: bcc-csm1-1-m, project: CMIP5, exp: historical, ensemble: r1i1p1, start_year: 1850, end_year: 2012}
+  - {dataset: BNU-ESM, project: CMIP5, exp: historical, ensemble: r1i1p1, start_year: 1950, end_year: 2005}
+  - {dataset: CanESM2, project: CMIP5, exp: historical, ensemble: r1i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: CanESM2, project: CMIP5, exp: historical, ensemble: r2i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: CanESM2, project: CMIP5, exp: historical, ensemble: r3i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: CanESM2, project: CMIP5, exp: historical, ensemble: r4i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: CanESM2, project: CMIP5, exp: historical, ensemble: r5i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: CCSM4, project: CMIP5, exp: historical, ensemble: r1i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: CCSM4, project: CMIP5, exp: historical, ensemble: r2i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: CCSM4, project: CMIP5, exp: historical, ensemble: r6i1p1, start_year: 1950, end_year: 2005}
+  - {dataset: CMCC-CM, project: CMIP5, exp: historical, ensemble: r1i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: CMCC-CMS, project: CMIP5, exp: historical, ensemble: r1i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: CNRM-CM5, project: CMIP5, exp: historical, ensemble: r1i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: CSIRO-Mk3-6-0, project: CMIP5, exp: historical, ensemble: r1i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: CSIRO-Mk3-6-0, project: CMIP5, exp: historical, ensemble: r2i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: CSIRO-Mk3-6-0, project: CMIP5, exp: historical, ensemble: r3i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: CSIRO-Mk3-6-0, project: CMIP5, exp: historical, ensemble: r4i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: CSIRO-Mk3-6-0, project: CMIP5, exp: historical, ensemble: r5i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: CSIRO-Mk3-6-0, project: CMIP5, exp: historical, ensemble: r6i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: CSIRO-Mk3-6-0, project: CMIP5, exp: historical, ensemble: r7i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: CSIRO-Mk3-6-0, project: CMIP5, exp: historical, ensemble: r8i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: CSIRO-Mk3-6-0, project: CMIP5, exp: historical, ensemble: r9i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: CSIRO-Mk3-6-0, project: CMIP5, exp: historical, ensemble: r10i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: FGOALS-g2, project: CMIP5, exp: historical, ensemble: r1i1p1, start_year: 1950, end_year: 2005}
+  - {dataset: FGOALS-s2, project: CMIP5, exp: historical, ensemble: r1i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: FGOALS-s2, project: CMIP5, exp: historical, ensemble: r2i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: FGOALS-s2, project: CMIP5, exp: historical, ensemble: r3i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: GFDL-ESM2G, project: CMIP5, exp: historical, ensemble: r1i1p1, start_year: 1861, end_year: 2005}
+  - {dataset: GFDL-ESM2M, project: CMIP5, exp: historical, ensemble: r1i1p1, start_year: 1861, end_year: 2005}
+  - {dataset: GISS-E2-R, project: CMIP5, exp: historical, ensemble: r6i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: GISS-E2-R, project: CMIP5, exp: historical, ensemble: r6i1p3, start_year: 1850, end_year: 2005}
+  - {dataset: HadCM3, project: CMIP5, exp: historical, ensemble: r1i1p1, start_year: 1859, end_year: 2005}
+  - {dataset: HadCM3, project: CMIP5, exp: historical, ensemble: r2i1p1, start_year: 1859, end_year: 2005}
+  - {dataset: HadCM3, project: CMIP5, exp: historical, ensemble: r3i1p1, start_year: 1859, end_year: 2005}
+  - {dataset: HadCM3, project: CMIP5, exp: historical, ensemble: r4i1p1, start_year: 1859, end_year: 2005}
+  - {dataset: HadCM3, project: CMIP5, exp: historical, ensemble: r5i1p1, start_year: 1859, end_year: 2005}
+  - {dataset: HadCM3, project: CMIP5, exp: historical, ensemble: r6i1p1, start_year: 1859, end_year: 2005}
+  - {dataset: HadCM3, project: CMIP5, exp: historical, ensemble: r7i1p1, start_year: 1859, end_year: 2005}
+  - {dataset: HadCM3, project: CMIP5, exp: historical, ensemble: r8i1p1, start_year: 1859, end_year: 2005}
+  - {dataset: HadCM3, project: CMIP5, exp: historical, ensemble: r9i1p1, start_year: 1859, end_year: 2005}
+  - {dataset: HadCM3, project: CMIP5, exp: historical, ensemble: r10i1p1, start_year: 1859, end_year: 2005}
+  - {dataset: HadGEM2-ES, project: CMIP5, exp: historical, ensemble: r2i1p1, start_year: 1859, end_year: 2005}
+  - {dataset: HadGEM2-ES, project: CMIP5, exp: historical, ensemble: r3i1p1, start_year: 1859, end_year: 2005}
+  - {dataset: inmcm4, project: CMIP5, exp: historical, ensemble: r1i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: IPSL-CM5A-LR, project: CMIP5, exp: historical, ensemble: r1i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: IPSL-CM5A-LR, project: CMIP5, exp: historical, ensemble: r2i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: IPSL-CM5A-LR, project: CMIP5, exp: historical, ensemble: r3i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: IPSL-CM5A-LR, project: CMIP5, exp: historical, ensemble: r4i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: IPSL-CM5B-LR, project: CMIP5, exp: historical, ensemble: r1i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: MIROC4h, project: CMIP5, exp: historical, ensemble: r1i1p1, start_year: 1950, end_year: 2005}
+  - {dataset: MIROC4h, project: CMIP5, exp: historical, ensemble: r2i1p1, start_year: 1950, end_year: 2005}
+  - {dataset: MIROC4h, project: CMIP5, exp: historical, ensemble: r3i1p1, start_year: 1950, end_year: 2005}
+  - {dataset: MIROC5, project: CMIP5, exp: historical, ensemble: r1i1p1, start_year: 1850, end_year: 2012}
+  - {dataset: MIROC5, project: CMIP5, exp: historical, ensemble: r2i1p1, start_year: 1850, end_year: 2012}
+  - {dataset: MIROC5, project: CMIP5, exp: historical, ensemble: r3i1p1, start_year: 1850, end_year: 2012}
+  - {dataset: MIROC-ESM, project: CMIP5, exp: historical, ensemble: r1i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: MIROC-ESM-CHEM, project: CMIP5, exp: historical, ensemble: r1i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: MPI-ESM-LR, project: CMIP5, exp: historical, ensemble: r1i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: MPI-ESM-LR, project: CMIP5, exp: historical, ensemble: r2i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: MPI-ESM-LR, project: CMIP5, exp: historical, ensemble: r3i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: MPI-ESM-MR, project: CMIP5, exp: historical, ensemble: r1i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: MPI-ESM-MR, project: CMIP5, exp: historical, ensemble: r2i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: MPI-ESM-MR, project: CMIP5, exp: historical, ensemble: r3i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: MRI-CGCM3, project: CMIP5, exp: historical, ensemble: r1i1p1, start_year: 1850, end_year: 2005}
+  - {dataset: NorESM1-M, project: CMIP5, exp: historical, ensemble: r1i1p1, start_year: 1850, end_year: 2005}
+  # RCP45
+  - {dataset: ACCESS1-0, project: CMIP5, exp: rcp45, ensemble: r1i1p1, start_year: 2006, end_year: 2100}
+  - {dataset: bcc-csm1-1, project: CMIP5, exp: rcp45, ensemble: r1i1p1, start_year: 2006, end_year: 2300}
+  - {dataset: bcc-csm1-1-m, project: CMIP5, exp: rcp45, ensemble: r1i1p1, start_year: 2006, end_year: 2100}
+  - {dataset: BNU-ESM, project: CMIP5, exp: rcp45, ensemble: r1i1p1, start_year: 2006, end_year: 2100}
+  - {dataset: CanESM2, project: CMIP5, exp: rcp45, ensemble: r1i1p1, start_year: 2006, end_year: 2300}
+  - {dataset: CanESM2, project: CMIP5, exp: rcp45, ensemble: r2i1p1, start_year: 2006, end_year: 2100}
+  - {dataset: CanESM2, project: CMIP5, exp: rcp45, ensemble: r3i1p1, start_year: 2006, end_year: 2100}
+  - {dataset: CanESM2, project: CMIP5, exp: rcp45, ensemble: r4i1p1, start_year: 2006, end_year: 2300}
+  - {dataset: CanESM2, project: CMIP5, exp: rcp45, ensemble: r5i1p1, start_year: 2006, end_year: 2100}
+  - {dataset: CCSM4, project: CMIP5, exp: rcp45, ensemble: r1i1p1, start_year: 2006, end_year: 2299}
+  - {dataset: CCSM4, project: CMIP5, exp: rcp45, ensemble: r2i1p1, start_year: 2006, end_year: 2100}
+  - {dataset: CCSM4, project: CMIP5, exp: rcp45, ensemble: r6i1p1, start_year: 2006, end_year: 2100}
+  - {dataset: CMCC-CM, project: CMIP5, exp: rcp45, ensemble: r1i1p1, start_year: 2006, end_year: 2100}
+  - {dataset: CMCC-CMS, project: CMIP5, exp: rcp45, ensemble: r1i1p1, start_year: 2006, end_year: 2100}
+  - {dataset: CNRM-CM5, project: CMIP5, exp: rcp45, ensemble: r1i1p1, start_year: 2006, end_year: 2100}
+  - {dataset: CSIRO-Mk3-6-0, project: CMIP5, exp: rcp45, ensemble: r1i1p1, start_year: 2006, end_year: 2300}
+  - {dataset: CSIRO-Mk3-6-0, project: CMIP5, exp: rcp45, ensemble: r2i1p1, start_year: 2006, end_year: 2300}
+  - {dataset: CSIRO-Mk3-6-0, project: CMIP5, exp: rcp45, ensemble: r3i1p1, start_year: 2006, end_year: 2300}
+  - {dataset: CSIRO-Mk3-6-0, project: CMIP5, exp: rcp45, ensemble: r4i1p1, start_year: 2006, end_year: 2100}
+  - {dataset: CSIRO-Mk3-6-0, project: CMIP5, exp: rcp45, ensemble: r5i1p1, start_year: 2006, end_year: 2100}
+  - {dataset: CSIRO-Mk3-6-0, project: CMIP5, exp: rcp45, ensemble: r6i1p1, start_year: 2006, end_year: 2100}
+  - {dataset: CSIRO-Mk3-6-0, project: CMIP5, exp: rcp45, ensemble: r7i1p1, start_year: 2006, end_year: 2100}
+  - {dataset: CSIRO-Mk3-6-0, project: CMIP5, exp: rcp45, ensemble: r8i1p1, start_year: 2006, end_year: 2100}
+  - {dataset: CSIRO-Mk3-6-0, project: CMIP5, exp: rcp45, ensemble: r9i1p1, start_year: 2006, end_year: 2100}
+  - {dataset: CSIRO-Mk3-6-0, project: CMIP5, exp: rcp45, ensemble: r10i1p1, start_year: 2006, end_year: 2100}
+  - {dataset: FGOALS-g2, project: CMIP5, exp: rcp45, ensemble: r1i1p1, start_year: 2006, end_year: 2203}
+  - {dataset: FGOALS-s2, project: CMIP5, exp: rcp45, ensemble: r1i1p1, start_year: 2006, end_year: 2300}
+  - {dataset: FGOALS-s2, project: CMIP5, exp: rcp45, ensemble: r2i1p1, start_year: 2006, end_year: 2100}
+  - {dataset: FGOALS-s2, project: CMIP5, exp: rcp45, ensemble: r3i1p1, start_year: 2006, end_year: 2100}
+  - {dataset: GFDL-ESM2G, project: CMIP5, exp: rcp45, ensemble: r1i1p1, start_year: 2006, end_year: 2100}
+  - {dataset: GFDL-ESM2M, project: CMIP5, exp: rcp45, ensemble: r1i1p1, start_year: 2006, end_year: 2100}
+  - {dataset: GISS-E2-R, project: CMIP5, exp: rcp45, ensemble: r6i1p1, start_year: 2006, end_year: 2100}
+  - {dataset: GISS-E2-R, project: CMIP5, exp: rcp45, ensemble: r6i1p3, start_year: 2006, end_year: 2100}
+  - {dataset: HadCM3, project: CMIP5, exp: rcp45, ensemble: r1i1p1, start_year: 2006, end_year: 2035}
+  - {dataset: HadCM3, project: CMIP5, exp: rcp45, ensemble: r2i1p1, start_year: 2006, end_year: 2035}
+  - {dataset: HadCM3, project: CMIP5, exp: rcp45, ensemble: r3i1p1, start_year: 2006, end_year: 2035}
+  - {dataset: HadCM3, project: CMIP5, exp: rcp45, ensemble: r4i1p1, start_year: 2006, end_year: 2035}
+  - {dataset: HadCM3, project: CMIP5, exp: rcp45, ensemble: r5i1p1, start_year: 2006, end_year: 2035}
+  - {dataset: HadCM3, project: CMIP5, exp: rcp45, ensemble: r6i1p1, start_year: 2006, end_year: 2035}
+  - {dataset: HadCM3, project: CMIP5, exp: rcp45, ensemble: r7i1p1, start_year: 2006, end_year: 2035}
+  - {dataset: HadCM3, project: CMIP5, exp: rcp45, ensemble: r8i1p1, start_year: 2006, end_year: 2035}
+  - {dataset: HadCM3, project: CMIP5, exp: rcp45, ensemble: r9i1p1, start_year: 2006, end_year: 2035}
+  - {dataset: HadCM3, project: CMIP5, exp: rcp45, ensemble: r10i1p1, start_year: 2006, end_year: 2035}
+  - {dataset: HadGEM2-ES, project: CMIP5, exp: rcp45, ensemble: r2i1p1, start_year: 2005, end_year: 2100}
+  - {dataset: HadGEM2-ES, project: CMIP5, exp: rcp45, ensemble: r3i1p1, start_year: 2005, end_year: 2100}
+  - {dataset: inmcm4, project: CMIP5, exp: rcp45, ensemble: r1i1p1, start_year: 2006, end_year: 2100}
+  - {dataset: IPSL-CM5A-LR, project: CMIP5, exp: rcp45, ensemble: r1i1p1, start_year: 2006, end_year: 2300}
+  - {dataset: IPSL-CM5A-LR, project: CMIP5, exp: rcp45, ensemble: r2i1p1, start_year: 2006, end_year: 2100}
+  - {dataset: IPSL-CM5A-LR, project: CMIP5, exp: rcp45, ensemble: r3i1p1, start_year: 2006, end_year: 2100}
+  - {dataset: IPSL-CM5A-LR, project: CMIP5, exp: rcp45, ensemble: r4i1p1, start_year: 2006, end_year: 2100}
+  - {dataset: IPSL-CM5B-LR, project: CMIP5, exp: rcp45, ensemble: r1i1p1, start_year: 2006, end_year: 2100}
+  - {dataset: MIROC4h, project: CMIP5, exp: rcp45, ensemble: r1i1p1, start_year: 2006, end_year: 2035}
+  - {dataset: MIROC4h, project: CMIP5, exp: rcp45, ensemble: r2i1p1, start_year: 2006, end_year: 2035}
+  - {dataset: MIROC4h, project: CMIP5, exp: rcp45, ensemble: r3i1p1, start_year: 2006, end_year: 2035}
+  - {dataset: MIROC5, project: CMIP5, exp: rcp45, ensemble: r1i1p1, start_year: 2006, end_year: 2100}
+  - {dataset: MIROC5, project: CMIP5, exp: rcp45, ensemble: r2i1p1, start_year: 2006, end_year: 2100}
+  - {dataset: MIROC5, project: CMIP5, exp: rcp45, ensemble: r3i1p1, start_year: 2006, end_year: 2100}
+  - {dataset: MIROC-ESM, project: CMIP5, exp: rcp45, ensemble: r1i1p1, start_year: 2006, end_year: 2300}
+  - {dataset: MIROC-ESM-CHEM, project: CMIP5, exp: rcp45, ensemble: r1i1p1, start_year: 2006, end_year: 2100}
+  - {dataset: MPI-ESM-LR, project: CMIP5, exp: rcp45, ensemble: r1i1p1, start_year: 2006, end_year: 2300}
+  - {dataset: MPI-ESM-LR, project: CMIP5, exp: rcp45, ensemble: r2i1p1, start_year: 2006, end_year: 2100}
+  - {dataset: MPI-ESM-LR, project: CMIP5, exp: rcp45, ensemble: r3i1p1, start_year: 2006, end_year: 2100}
+  - {dataset: MPI-ESM-MR, project: CMIP5, exp: rcp45, ensemble: r1i1p1, start_year: 2006, end_year: 2100}
+  - {dataset: MPI-ESM-MR, project: CMIP5, exp: rcp45, ensemble: r2i1p1, start_year: 2006, end_year: 2100}
+  - {dataset: MPI-ESM-MR, project: CMIP5, exp: rcp45, ensemble: r3i1p1, start_year: 2006, end_year: 2100}
+  - {dataset: MRI-CGCM3, project: CMIP5, exp: rcp45, ensemble: r1i1p1, start_year: 2006, end_year: 2100}
+  - {dataset: NorESM1-M, project: CMIP5, exp: rcp45, ensemble: r1i1p1, start_year: 2006, end_year: 2300}
+  # historicalNat
+  - {dataset: bcc-csm1-1, project: CMIP5, exp: historicalNat, ensemble: r1i1p1, start_year: 1850, end_year: 2012}
+  - {dataset: CanESM2, project: CMIP5, exp: historicalNat, ensemble: r1i1p1, start_year: 1850, end_year: 2012}
+  - {dataset: CanESM2, project: CMIP5, exp: historicalNat, ensemble: r2i1p1, start_year: 1850, end_year: 2012}
+  - {dataset: CanESM2, project: CMIP5, exp: historicalNat, ensemble: r3i1p1, start_year: 1850, end_year: 2012}
+  - {dataset: CanESM2, project: CMIP5, exp: historicalNat, ensemble: r4i1p1, start_year: 1850, end_year: 2012}
+  - {dataset: CanESM2, project: CMIP5, exp: historicalNat, ensemble: r5i1p1, start_year: 1850, end_year: 2012}
+  - {dataset: CNRM-CM5, project: CMIP5, exp: historicalNat, ensemble: r1i1p1, start_year: 1850, end_year: 2012}
+  - {dataset: CNRM-CM5, project: CMIP5, exp: historicalNat, ensemble: r2i1p1, start_year: 1850, end_year: 2012}
+  - {dataset: CNRM-CM5, project: CMIP5, exp: historicalNat, ensemble: r3i1p1, start_year: 1850, end_year: 2012}
+  - {dataset: CNRM-CM5, project: CMIP5, exp: historicalNat, ensemble: r4i1p1, start_year: 1850, end_year: 2012}
+  - {dataset: CNRM-CM5, project: CMIP5, exp: historicalNat, ensemble: r5i1p1, start_year: 1850, end_year: 2012}
+  - {dataset: CNRM-CM5, project: CMIP5, exp: historicalNat, ensemble: r8i1p1, start_year: 1850, end_year: 2012}
+  - {dataset: CSIRO-Mk3-6-0, project: CMIP5, exp: historicalNat, ensemble: r1i1p1, start_year: 1850, end_year: 2012}
+  - {dataset: CSIRO-Mk3-6-0, project: CMIP5, exp: historicalNat, ensemble: r2i1p1, start_year: 1850, end_year: 2012}
+  - {dataset: CSIRO-Mk3-6-0, project: CMIP5, exp: historicalNat, ensemble: r3i1p1, start_year: 1850, end_year: 2012}
+  - {dataset: CSIRO-Mk3-6-0, project: CMIP5, exp: historicalNat, ensemble: r4i1p1, start_year: 1850, end_year: 2012}
+  - {dataset: CSIRO-Mk3-6-0, project: CMIP5, exp: historicalNat, ensemble: r5i1p1, start_year: 1850, end_year: 2012}
+  - {dataset: HadGEM2-ES, project: CMIP5, exp: historicalNat, ensemble: r1i1p1, start_year: 1859, end_year: 2019}
+  - {dataset: HadGEM2-ES, project: CMIP5, exp: historicalNat, ensemble: r2i1p1, start_year: 1859, end_year: 2019}
+  - {dataset: HadGEM2-ES, project: CMIP5, exp: historicalNat, ensemble: r3i1p1, start_year: 1859, end_year: 2019}
+  - {dataset: HadGEM2-ES, project: CMIP5, exp: historicalNat, ensemble: r4i1p1, start_year: 1859, end_year: 2019}
+  - {dataset: IPSL-CM5A-LR, project: CMIP5, exp: historicalNat, ensemble: r1i1p1, start_year: 1850, end_year: 2012}
+  - {dataset: IPSL-CM5A-LR, project: CMIP5, exp: historicalNat, ensemble: r2i1p1, start_year: 1850, end_year: 2012}
+  - {dataset: IPSL-CM5A-LR, project: CMIP5, exp: historicalNat, ensemble: r3i1p1, start_year: 1850, end_year: 2012}
+  - {dataset: IPSL-CM5A-MR, project: CMIP5, exp: historicalNat, ensemble: r1i1p1, start_year: 1850, end_year: 2012}
+  - {dataset: IPSL-CM5A-MR, project: CMIP5, exp: historicalNat, ensemble: r2i1p1, start_year: 1850, end_year: 2012}
+  - {dataset: IPSL-CM5A-MR, project: CMIP5, exp: historicalNat, ensemble: r3i1p1, start_year: 1850, end_year: 2012}
+  - {dataset: NorESM1-M, project: CMIP5, exp: historicalNat, ensemble: r1i1p1, start_year: 1850, end_year: 2012}
+
+preprocessors:
+  preproc:
+    extract_levels: false
+diagnostics:
+  example:
+    description: Example diagnostic written in R
+    variables:
+      pr:
+        preprocessor: preproc
+#        reference_dataset: "EC-EARTH"
+        mip: day
+    scripts:
+      main:
+        script: examples/diagnostic.R
+        parameter1: 1  # example parameter
+

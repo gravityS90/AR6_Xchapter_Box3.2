@@ -1,0 +1,253 @@
+# ESMValTool
+# recipe_example_r.yml
+---
+documentation:
+  description: Recipe for example diagnostic written in R.
+
+  authors:
+    - arnone_enrico
+
+  maintainer:
+    - andela_bouwe
+
+datasets:
+  # Historical
+  - {dataset: BCC-CSM2-MR, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r2i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r3i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r4i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r5i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r6i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r7i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r8i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r9i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r10i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r11i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r12i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r13i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r14i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r15i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r16i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r17i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r18i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r19i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r20i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r21i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r22i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r23i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r24i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r25i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r1i1p2f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r2i1p2f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r3i1p2f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r4i1p2f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r5i1p2f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r6i1p2f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r7i1p2f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r8i1p2f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r9i1p2f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r10i1p2f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r11i1p2f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r12i1p2f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r13i1p2f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r14i1p2f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r15i1p2f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r16i1p2f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r17i1p2f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r18i1p2f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r19i1p2f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r20i1p2f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r21i1p2f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r22i1p2f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r23i1p2f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r24i1p2f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r25i1p2f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CESM2, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CESM2, project: CMIP6, exp: historical, ensemble: r2i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CESM2, project: CMIP6, exp: historical, ensemble: r3i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CESM2-WACCM, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CNRM-CM6-1, project: CMIP6, exp: historical, ensemble: r1i1p1f2, grid: gr, start_year: 1850, end_year: 2014}
+  - {dataset: CNRM-ESM2-1, project: CMIP6, exp: historical, ensemble: r1i1p1f2, grid: gr, start_year: 1850, end_year: 2014}
+  - {dataset: EC-Earth3, project: CMIP6, exp: historical, ensemble: r4i1p1f1, grid: gr, start_year: 1850, end_year: 2014}
+  - {dataset: EC-Earth3, project: CMIP6, exp: historical, ensemble: r6i1p1f1, grid: gr, start_year: 1850, end_year: 2014}
+  - {dataset: EC-Earth3, project: CMIP6, exp: historical, ensemble: r9i1p1f1, grid: gr, start_year: 1850, end_year: 2014}
+  - {dataset: EC-Earth3-Veg, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gr, start_year: 1850, end_year: 2014}
+  - {dataset: EC-Earth3-Veg, project: CMIP6, exp: historical, ensemble: r2i1p1f1, grid: gr, start_year: 1850, end_year: 2014}
+  - {dataset: EC-Earth3-Veg, project: CMIP6, exp: historical, ensemble: r4i1p1f1, grid: gr, start_year: 1850, end_year: 2014}
+  - {dataset: GFDL-CM4, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gr1, start_year: 1850, end_year: 2014}
+  - {dataset: GFDL-ESM4, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gr1, start_year: 1850, end_year: 2014}
+  - {dataset: HadGEM3-GC31-LL, project: CMIP6, exp: historical, ensemble: r1i1p1f3, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: HadGEM3-GC31-LL, project: CMIP6, exp: historical, ensemble: r2i1p1f3, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: HadGEM3-GC31-LL, project: CMIP6, exp: historical, ensemble: r3i1p1f3, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: HadGEM3-GC31-LL, project: CMIP6, exp: historical, ensemble: r4i1p1f3, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gr, start_year: 1850, end_year: 2014}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, exp: historical, ensemble: r2i1p1f1, grid: gr, start_year: 1850, end_year: 2014}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, exp: historical, ensemble: r5i1p1f1, grid: gr, start_year: 1850, end_year: 2014}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, exp: historical, ensemble: r10i1p1f1, grid: gr, start_year: 1850, end_year: 2014}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, exp: historical, ensemble: r11i1p1f1, grid: gr, start_year: 1850, end_year: 2014}
+  - {dataset: INM-CM4-8, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gr1, start_year: 1850, end_year: 2014}
+  - {dataset: INM-CM5-0, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gr1, start_year: 1850, end_year: 2014}
+  - {dataset: MIROC6, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: MIROC6, project: CMIP6, exp: historical, ensemble: r2i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: MIROC6, project: CMIP6, exp: historical, ensemble: r3i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, exp: historical, ensemble: r2i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: MRI-ESM2-0, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: MRI-ESM2-0, project: CMIP6, exp: historical, ensemble: r2i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: MRI-ESM2-0, project: CMIP6, exp: historical, ensemble: r3i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: MRI-ESM2-0, project: CMIP6, exp: historical, ensemble: r4i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: MRI-ESM2-0, project: CMIP6, exp: historical, ensemble: r5i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: NESM3, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: NESM3, project: CMIP6, exp: historical, ensemble: r2i1p1f1, grid: gn, start_year: 1950, end_year: 2014}
+  - {dataset: UKESM1-0-LL, project: CMIP6, exp: historical, ensemble: r1i1p1f2, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: UKESM1-0-LL, project: CMIP6, exp: historical, ensemble: r2i1p1f2, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: UKESM1-0-LL, project: CMIP6, exp: historical, ensemble: r3i1p1f2, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: UKESM1-0-LL, project: CMIP6, exp: historical, ensemble: r4i1p1f2, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: UKESM1-0-LL, project: CMIP6, exp: historical, ensemble: r8i1p1f2, grid: gn, start_year: 1850, end_year: 2014}
+  # SSP245
+  - {dataset: BCC-CSM2-MR, project: CMIP6, exp: ssp245, ensemble: r1i1p1f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r1i1p1f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r2i1p1f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r3i1p1f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r4i1p1f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r5i1p1f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r6i1p1f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r7i1p1f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r8i1p1f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r9i1p1f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r10i1p1f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r11i1p1f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r12i1p1f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r13i1p1f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r14i1p1f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r15i1p1f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r16i1p1f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r17i1p1f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r18i1p1f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r19i1p1f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r20i1p1f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r21i1p1f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r22i1p1f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r23i1p1f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r24i1p1f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r25i1p1f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r1i1p2f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r2i1p2f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r3i1p2f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r4i1p2f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r5i1p2f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r6i1p2f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r7i1p2f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r8i1p2f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r9i1p2f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r10i1p2f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r11i1p2f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r12i1p2f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r13i1p2f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r14i1p2f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r15i1p2f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r16i1p2f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r17i1p2f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r18i1p2f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r19i1p2f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r20i1p2f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r21i1p2f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r22i1p2f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r23i1p2f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r24i1p2f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CanESM5, project: CMIP6, exp: ssp245, ensemble: r25i1p2f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CESM2, project: CMIP6, exp: ssp245, ensemble: r1i1p1f1, grid: gn, start_year: 2015, end_year: 2024}
+  - {dataset: CESM2, project: CMIP6, exp: ssp245, ensemble: r2i1p1f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CESM2, project: CMIP6, exp: ssp245, ensemble: r3i1p1f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: CESM2-WACCM, project: CMIP6, exp: ssp245, ensemble: r1i1p1f1, grid: gn, start_year: 2015, end_year: 2024}
+  - {dataset: CNRM-CM6-1, project: CMIP6, exp: ssp245, ensemble: r1i1p1f2, grid: gr, start_year: 2015, end_year: 2100}
+  - {dataset: CNRM-ESM2-1, project: CMIP6, exp: ssp245, ensemble: r1i1p1f2, grid: gr, start_year: 2015, end_year: 2100}
+  - {dataset: EC-Earth3, project: CMIP6, exp: ssp245, ensemble: r4i1p1f1, grid: gr, start_year: 2015, end_year: 2018}
+  - {dataset: EC-Earth3, project: CMIP6, exp: ssp245, ensemble: r6i1p1f1, grid: gr, start_year: 2015, end_year: 2018}
+  - {dataset: EC-Earth3, project: CMIP6, exp: ssp245, ensemble: r9i1p1f1, grid: gr, start_year: 2015, end_year: 2018}
+  - {dataset: EC-Earth3-Veg, project: CMIP6, exp: ssp245, ensemble: r1i1p1f1, grid: gr, start_year: 2015, end_year: 2018}
+  - {dataset: EC-Earth3-Veg, project: CMIP6, exp: ssp245, ensemble: r2i1p1f1, grid: gr, start_year: 2015, end_year: 2018}
+  - {dataset: EC-Earth3-Veg, project: CMIP6, exp: ssp245, ensemble: r4i1p1f1, grid: gr, start_year: 2015, end_year: 2018}
+  - {dataset: GFDL-CM4, project: CMIP6, exp: ssp245, ensemble: r1i1p1f1, grid: gr1, start_year: 2015, end_year: 2100}
+  - {dataset: GFDL-ESM4, project: CMIP6, exp: ssp245, ensemble: r1i1p1f1, grid: gr1, start_year: 2015, end_year: 2100}
+  - {dataset: HadGEM3-GC31-LL, project: CMIP6, exp: ssp245, ensemble: r1i1p1f3, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: HadGEM3-GC31-LL, project: CMIP6, exp: ssp245, ensemble: r2i1p1f3, grid: gn, start_year: 2015, end_year: 2020}
+  - {dataset: HadGEM3-GC31-LL, project: CMIP6, exp: ssp245, ensemble: r3i1p1f3, grid: gn, start_year: 2015, end_year: 2020}
+  - {dataset: HadGEM3-GC31-LL, project: CMIP6, exp: ssp245, ensemble: r4i1p1f3, grid: gn, start_year: 2015, end_year: 2020}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, exp: ssp245, ensemble: r1i1p1f1, grid: gr, start_year: 2015, end_year: 2100}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, exp: ssp245, ensemble: r2i1p1f1, grid: gr, start_year: 2015, end_year: 2100}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, exp: ssp245, ensemble: r5i1p1f1, grid: gr, start_year: 2015, end_year: 2100}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, exp: ssp245, ensemble: r10i1p1f1, grid: gr, start_year: 2015, end_year: 2100}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, exp: ssp245, ensemble: r11i1p1f1, grid: gr, start_year: 2015, end_year: 2100}
+  - {dataset: INM-CM4-8, project: CMIP6, exp: ssp245, ensemble: r1i1p1f1, grid: gr1, start_year: 2015, end_year: 2100}
+  - {dataset: INM-CM5-0, project: CMIP6, exp: ssp245, ensemble: r1i1p1f1, grid: gr1, start_year: 2015, end_year: 2100}
+  - {dataset: MIROC6, project: CMIP6, exp: ssp245, ensemble: r1i1p1f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: MIROC6, project: CMIP6, exp: ssp245, ensemble: r2i1p1f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: MIROC6, project: CMIP6, exp: ssp245, ensemble: r3i1p1f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, exp: ssp245, ensemble: r1i1p1f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, exp: ssp245, ensemble: r2i1p1f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: MRI-ESM2-0, project: CMIP6, exp: ssp245, ensemble: r1i1p1f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: MRI-ESM2-0, project: CMIP6, exp: ssp245, ensemble: r2i1p1f1, grid: gn, start_year: 2015, end_year: 2030}
+  - {dataset: MRI-ESM2-0, project: CMIP6, exp: ssp245, ensemble: r3i1p1f1, grid: gn, start_year: 2015, end_year: 2030}
+  - {dataset: MRI-ESM2-0, project: CMIP6, exp: ssp245, ensemble: r4i1p1f1, grid: gn, start_year: 2015, end_year: 2030}
+  - {dataset: MRI-ESM2-0, project: CMIP6, exp: ssp245, ensemble: r5i1p1f1, grid: gn, start_year: 2015, end_year: 2030}
+  - {dataset: NESM3, project: CMIP6, exp: ssp245, ensemble: r1i1p1f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: NESM3, project: CMIP6, exp: ssp245, ensemble: r2i1p1f1, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: UKESM1-0-LL, project: CMIP6, exp: ssp245, ensemble: r1i1p1f2, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: UKESM1-0-LL, project: CMIP6, exp: ssp245, ensemble: r2i1p1f2, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: UKESM1-0-LL, project: CMIP6, exp: ssp245, ensemble: r3i1p1f2, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: UKESM1-0-LL, project: CMIP6, exp: ssp245, ensemble: r4i1p1f2, grid: gn, start_year: 2015, end_year: 2100}
+  - {dataset: UKESM1-0-LL, project: CMIP6, exp: ssp245, ensemble: r8i1p1f2, grid: gn, start_year: 2015, end_year: 2100}
+  # hist-nat
+  - {dataset: BCC-CSM2-MR, project: CMIP6, exp: hist-nat, ensemble: r1i1p1f1, grid: gn, start_year: 1850, end_year: 2020}
+  - {dataset: BCC-CSM2-MR, project: CMIP6, exp: hist-nat, ensemble: r2i1p1f1, grid: gn, start_year: 1850, end_year: 2020}
+  - {dataset: BCC-CSM2-MR, project: CMIP6, exp: hist-nat, ensemble: r3i1p1f1, grid: gn, start_year: 1850, end_year: 2020}
+  - {dataset: CanESM5, project: CMIP6, exp: hist-nat, ensemble: r1i1p1f1, grid: gn, start_year: 1850, end_year: 2020}
+  - {dataset: CanESM5, project: CMIP6, exp: hist-nat, ensemble: r2i1p1f1, grid: gn, start_year: 1850, end_year: 2020}
+  - {dataset: CanESM5, project: CMIP6, exp: hist-nat, ensemble: r3i1p1f1, grid: gn, start_year: 1850, end_year: 2020}
+  - {dataset: CanESM5, project: CMIP6, exp: hist-nat, ensemble: r4i1p1f1, grid: gn, start_year: 1850, end_year: 2020}
+  - {dataset: CanESM5, project: CMIP6, exp: hist-nat, ensemble: r5i1p1f1, grid: gn, start_year: 1850, end_year: 2020}
+  - {dataset: CanESM5, project: CMIP6, exp: hist-nat, ensemble: r6i1p1f1, grid: gn, start_year: 1850, end_year: 2020}
+  - {dataset: CanESM5, project: CMIP6, exp: hist-nat, ensemble: r7i1p1f1, grid: gn, start_year: 1850, end_year: 2020}
+  - {dataset: CanESM5, project: CMIP6, exp: hist-nat, ensemble: r8i1p1f1, grid: gn, start_year: 1850, end_year: 2020}
+  - {dataset: CanESM5, project: CMIP6, exp: hist-nat, ensemble: r9i1p1f1, grid: gn, start_year: 1850, end_year: 2020}
+  - {dataset: CanESM5, project: CMIP6, exp: hist-nat, ensemble: r10i1p1f1, grid: gn, start_year: 1850, end_year: 2020}
+  - {dataset: CNRM-CM6-1, project: CMIP6, exp: hist-nat, ensemble: r1i1p1f2, grid: gr, start_year: 1850, end_year: 2020}
+  - {dataset: CNRM-CM6-1, project: CMIP6, exp: hist-nat, ensemble: r2i1p1f2, grid: gr, start_year: 1850, end_year: 2020}
+  - {dataset: CNRM-CM6-1, project: CMIP6, exp: hist-nat, ensemble: r3i1p1f2, grid: gr, start_year: 1850, end_year: 2020}
+  - {dataset: HadGEM3-GC31-LL, project: CMIP6, exp: hist-nat, ensemble: r1i1p1f3, grid: gn, start_year: 1850, end_year: 2020}
+  - {dataset: HadGEM3-GC31-LL, project: CMIP6, exp: hist-nat, ensemble: r2i1p1f3, grid: gn, start_year: 1850, end_year: 2020}
+  - {dataset: HadGEM3-GC31-LL, project: CMIP6, exp: hist-nat, ensemble: r3i1p1f3, grid: gn, start_year: 1850, end_year: 2020}
+  - {dataset: HadGEM3-GC31-LL, project: CMIP6, exp: hist-nat, ensemble: r4i1p1f3, grid: gn, start_year: 1850, end_year: 2020}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, exp: hist-nat, ensemble: r1i1p1f1, grid: gr, start_year: 1850, end_year: 2020}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, exp: hist-nat, ensemble: r2i1p1f1, grid: gr, start_year: 1850, end_year: 2020}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, exp: hist-nat, ensemble: r4i1p1f1, grid: gr, start_year: 1850, end_year: 2020}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, exp: hist-nat, ensemble: r5i1p1f1, grid: gr, start_year: 1850, end_year: 2020}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, exp: hist-nat, ensemble: r6i1p1f1, grid: gr, start_year: 1850, end_year: 2020}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, exp: hist-nat, ensemble: r7i1p1f1, grid: gr, start_year: 1850, end_year: 2020}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, exp: hist-nat, ensemble: r8i1p1f1, grid: gr, start_year: 1850, end_year: 2020}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, exp: hist-nat, ensemble: r9i1p1f1, grid: gr, start_year: 1850, end_year: 2020}
+  - {dataset: IPSL-CM6A-LR, project: CMIP6, exp: hist-nat, ensemble: r10i1p1f1, grid: gr, start_year: 1850, end_year: 2020}
+  - {dataset: MRI-ESM2-0, project: CMIP6, exp: hist-nat, ensemble: r1i1p1f1, grid: gn, start_year: 1850, end_year: 2020}
+  - {dataset: MRI-ESM2-0, project: CMIP6, exp: hist-nat, ensemble: r3i1p1f1, grid: gn, start_year: 1850, end_year: 2020}
+  - {dataset: MRI-ESM2-0, project: CMIP6, exp: hist-nat, ensemble: r5i1p1f1, grid: gn, start_year: 1850, end_year: 2020}
+  - {dataset: NorESM2-LM, project: CMIP6, exp: hist-nat, ensemble: r1i1p1f1, grid: gn, start_year: 1950, end_year: 2020}
+  - {dataset: NorESM2-LM, project: CMIP6, exp: hist-nat, ensemble: r2i1p1f1, grid: gn, start_year: 1950, end_year: 2020}
+  - {dataset: NorESM2-LM, project: CMIP6, exp: hist-nat, ensemble: r3i1p1f1, grid: gn, start_year: 1950, end_year: 2020}
+
+preprocessors:
+  preproc:
+    extract_levels: false
+diagnostics:
+  example:
+    description: Example diagnostic written in R
+    variables:
+      pr:
+        preprocessor: preproc
+#        reference_dataset: "EC-EARTH"
+        mip: day
+    scripts:
+      main:
+        script: examples/diagnostic.R
+        parameter1: 1  # example parameter
