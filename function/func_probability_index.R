@@ -8,13 +8,13 @@ options(warn=-1)
 
 # CDF of GEVD for observation	
 pi_obs <- function(
-           file,                                                                          # Input file
-		       in_variable,                                                                   # Input variable
-				   unit,                                                                          # Input data unit
-				   fmask,                                                                         # Fixed mask of OBS
-				   obs.period,                                                                    # Input period
-				   sel.period,                                                                    # Output period
-				   fou){                                                                          # Output file
+                   file,                                                                          # Input file
+                   in_variable,                                                                   # Input variable
+                   unit,                                                                          # Input data unit
+                   fmask,                                                                         # Fixed mask of OBS
+                   obs.period,                                                                    # Input period
+                   sel.period,                                                                    # Output period
+                   fou){                                                                          # Output file
  obs_var  <- cdo("selvar",
                  args=in_variable,
                  input=file,
@@ -76,17 +76,17 @@ pi_obs <- function(
  xdim <- ncdim_def("lon","degrees_east",as.double(lon))
  ydim <- ncdim_def("lat","degrees_north",as.double(lat))
  tunits3 <- paste("years since ",
-		          sel.period[1],
-		          "-07-16 12:00:00.0-0:00", sep="")
+		  sel.period[1],
+		  "-07-16 12:00:00.0-0:00", sep="")
  tdim    <- ncdim_def("time",tunits3,as.double(c(0:(nt-1))))
  # Set variables information
  fillvalue <- 1e32
  dlname    <- "Probability index"
  pi.def  <- ncvar_def("cdf","none",
-		              list(xdim,ydim,tdim),
-					  fillvalue,
-					  dlname,
-					  prec="single")
+                      list(xdim,ydim,tdim),
+                      fillvalue,
+                      dlname,
+                      prec="single")
  # Open nc file which is writed
  ncfname <- paste(fou,sep="")
  ncout   <- nc_create(ncfname,list(pi.def))
@@ -104,13 +104,13 @@ pi_obs <- function(
 
 # CDF of GEVD for splitted model data
 pi_model_splitted <- function(
-                file1,                                                                    # Input file1
-		            file2,                                                                    # Input file2
-							  variable,                                                                 # Input variable
-							  unit,                                                                     # Input data unit
-							  end.yr,                                                                   # Last year of file1
-							  sel.period,                                                               # Output period
-							  fou){                                                                     # Output file
+                              file1,                                                                    # Input file1
+                              file2,                                                                    # Input file2
+                              variable,                                                                 # Input variable
+                              unit,                                                                     # Input data unit
+                              end.yr,                                                                   # Last year of file1
+                              sel.period,                                                               # Output period
+                              fou){                                                                     # Output file
  # For first file
  file1_copy <- cdo("copy",
                    input=file1,
@@ -173,16 +173,16 @@ pi_model_splitted <- function(
  xdim <- ncdim_def("lon","degrees_east",as.double(lon))
  ydim <- ncdim_def("lat","degrees_north",as.double(lat))
  tunits3 <- paste("years since ",
-		          sel.period[1],
-		          "-07-16 12:00:00.0-0:00", sep="")
+                  sel.period[1],
+                  "-07-16 12:00:00.0-0:00", sep="")
  tdim    <- ncdim_def("time",tunits3,as.double(c(0:(nt-1))))
  # Set variables information
  fillvalue <- 1e32
  dlname    <- "Probability index"
  pi.def  <- ncvar_def("cdf","none",
-		              list(xdim,ydim,tdim),
-					  fillvalue,
-					  dlname,prec="single")
+                      list(xdim,ydim,tdim),
+                      fillvalue,
+                      dlname,prec="single")
  # Open nc file which is writed
  ncfname <- paste(fou,sep="")
  ncout   <- nc_create(ncfname,list(pi.def))
@@ -199,11 +199,11 @@ pi_model_splitted <- function(
 
 # CDF of GEVD for non-splitted model data
 pi_model_nsplitted <- function(
-                 file,                                                                    # Input file
-		             variable,                                                                # Input variable
-							   unit,                                                                    # Input data unit
-							   sel.period,                                                              # Output period
-							   fou){                                                                    # Output file
+                               file,                                                                    # Input file
+                               variable,                                                                # Input variable
+                               unit,                                                                    # Input data unit
+                               sel.period,                                                              # Output period
+                               fou){                                                                    # Output file
  # Preprocessing
  model_copy <- cdo("copy",
                    input=file,
@@ -254,16 +254,16 @@ pi_model_nsplitted <- function(
  xdim <- ncdim_def("lon","degrees_east",as.double(lon))
  ydim <- ncdim_def("lat","degrees_north",as.double(lat))
  tunits3 <- paste("years since ",
-		          sel.period[1],
-		          "-07-16 12:00:00.0-0:00", sep="")
+                  sel.period[1],
+                  "-07-16 12:00:00.0-0:00", sep="")
  tdim    <- ncdim_def("time",tunits3,as.double(c(0:(nt-1))))
  # Set variables information
  fillvalue <- 1e32
  dlname    <- "Probability index"
  pi.def  <- ncvar_def("cdf","none",
-		              list(xdim,ydim,tdim),
-					  fillvalue,
-					  dlname,prec="single")
+                      list(xdim,ydim,tdim),
+                      fillvalue,
+                      dlname,prec="single")
  # Open nc file which is writed
  ncfname <- paste(fou,sep="")
  ncout   <- nc_create(ncfname,list(pi.def))
