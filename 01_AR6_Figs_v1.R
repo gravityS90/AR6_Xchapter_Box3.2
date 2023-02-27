@@ -39,14 +39,14 @@ for( variable in c("TXx","Rx1day") ){
  # Make fixed mask
  fmask <- paste0(output_dir,
                  "Fixed_mask70_",
- 				variable,
- 				"_",
- 				obs,
- 				"_",
- 				sel.period.obs[1],
- 				"-",
- 				sel.period.obs[2],
- 				".nc")
+ 		 variable,
+ 		 "_",
+ 		 obs,
+ 		 "_",
+ 		 sel.period.obs[1],
+ 		 "-",
+ 		 sel.period.obs[2],
+ 		 ".nc")
  fixed_mask(fin=fobs,
             in_variable="Ann",
             out_variable=variable,
@@ -65,15 +65,15 @@ for( variable in c("TXx","Rx1day") ){
  }else if( variable == "Rx1day" ){
   # CDF of GEVD for observation (for only Rx1day)
   fobs.pi <- paste0(input_dir,
-           "cdf_",
- 				   tolower(variable),
- 				   "ETCCDI_",
- 				   obs,
- 				   "_",
- 				   sel.period.obs[1],
- 				   "-",
- 				   sel.period.obs[2],
- 				   ".nc")
+                    "cdf_",
+ 		    tolower(variable),
+ 		    "ETCCDI_",
+ 		    obs,
+ 		    "_",
+ 		    sel.period.obs[1],
+ 		    "-",
+ 		    sel.period.obs[2],
+ 		    ".nc")
   pi_obs(file=fobs,
          in_variable="Ann",
          unit="mm/day",                                                                   # Flux -> mutiply 86400
@@ -120,7 +120,7 @@ for( variable in c("TXx","Rx1day") ){
  	 switch(x,
           all=paste(
                     "cdf_",
-                   	tolower(variable),
+                    tolower(variable),
                     "ETCCDI_yr_",
                     cmip5_name[cmip5_experiment == "historical"],
                     "_",
@@ -133,9 +133,9 @@ for( variable in c("TXx","Rx1day") ){
                     sel.period[2],
                     ".nc",
                     sep = ""),
-         	nat=paste(
-                  	"cdf_",
-                  	tolower(variable),
+          nat=paste(
+                    "cdf_",
+                    tolower(variable),
                     "ETCCDI_yr_",
                     cmip5_name[cmip5_experiment == "historicalNat"],
                     "_",
@@ -162,24 +162,23 @@ for( variable in c("TXx","Rx1day") ){
   for( scenario in c("historical","historicalNat") ){
    climdex.input <- get(paste0(scenario,"_file"))
    cdf.climdex <- switch(scenario,
-            		         historical=cmip5.cdf.list("all"),
-             						 historicalNat=cmip5.cdf.list("nat"))
+            		 historical=cmip5.cdf.list("all"),
+             		 historicalNat=cmip5.cdf.list("nat"))
    for( model_idx in c(1:length(climdex.input)) ){
     if( !file.exists(paste0(work_dir,cdf.climdex)[model_idx]) ){                          # CDF file exist?
      switch(scenario,
     		    historical=pi_model_splitted(file1=climdex.input[model_idx],
- 							                           file2=rcp45_file[model_idx],
-                							           variable="rx1dayETCCDI",
-                                         unit="mm/day",
-                                         end.yr=2005,
- 							                           sel.period=sel.period,
- 							                           fou=paste0(work_dir,cdf.climdex[model_idx])),
-            historicalNat=pi_model_nsplitted(
-                                         file=climdex.input[model_idx],
-             								             variable="rx1dayETCCDI",
-                                         unit="mm/day",
- 						             		             sel.period=sel.period.nat,
- 								                         fou=paste0(work_dir,cdf.climdex[model_idx])))
+ 						 file2=rcp45_file[model_idx],
+                				 variable="rx1dayETCCDI",
+                                                 unit="mm/day",
+                                                 end.yr=2005,
+ 						 sel.period=sel.period,
+ 						 fou=paste0(work_dir,cdf.climdex[model_idx])),
+            historicalNat=pi_model_nsplitted(file=climdex.input[model_idx],
+             				     variable="rx1dayETCCDI",
+                                             unit="mm/day",
+ 					     sel.period=sel.period.nat,
+ 					     fou=paste0(work_dir,cdf.climdex[model_idx])))
     } # if 
    } # for model_idx
   } # for scenario
@@ -199,21 +198,21 @@ for( variable in c("TXx","Rx1day") ){
   for(model_idx in c(1:length(historical_file))){
    cmip5_each_all[model_idx,] <- preproc_model_splitted(
                                    file1=historical_file[model_idx],
- 		                               file2=rcp45_file[model_idx],
-										               variable=paste0(tolower(variable),"ETCCDI"),
-										               fmask=fmask,
+ 		                   file2=rcp45_file[model_idx],
+				   variable=paste0(tolower(variable),"ETCCDI"),
+				   fmask=fmask,
                                    end.yr=2005,
-										               sel.period=sel.period,
-										               ref.period=ref.period)
+				   sel.period=sel.period,
+				   ref.period=ref.period)
   } # for model_idx
  }else if( variable == "Rx1day" ){
   for(model_idx in c(1:length(historical_file))){
    cmip5_each_all[model_idx,] <- preproc_model_nsplitted(
                                     file=historical_file[model_idx],
- 		                                variable="cdf",
-										                fmask=fmask,
-                 								    sel.period=sel.period,
-										                ref.period=ref.period)
+ 		                    variable="cdf",
+				    fmask=fmask,
+                 		    sel.period=sel.period,
+				    ref.period=ref.period)
   } # for model_idx
   cmip5_each_all <- cmip5_each_all*100                                                    # Probability
  } # if variable
@@ -238,29 +237,29 @@ for( variable in c("TXx","Rx1day") ){
   for(model_idx in c(1:length(historicalNat_file))){
    cmip5_each_nat[model_idx,] <- preproc_model_nsplitted(
                                     file=historicalNat_file[model_idx],
- 		                                variable=paste0(tolower(variable),"ETCCDI"),
- 										                fmask=fmask,
-                 								    sel.period=sel.period.nat,
-										                ref.period=ref.period)
+ 		                    variable=paste0(tolower(variable),"ETCCDI"),
+ 				    fmask=fmask,
+                 		    sel.period=sel.period.nat,
+				    ref.period=ref.period)
   } # for model_idx
  }else if( variable == "Rx1day" ){
   for(model_idx in c(1:length(historicalNat_file))){
    cmip5_each_nat[model_idx,] <- preproc_model_nsplitted(
                                     file=historicalNat_file[model_idx],
- 		                                variable="cdf",
-										                fmask=fmask,
-                 								    sel.period=sel.period.nat,
-										                ref.period=ref.period)
+ 		                    variable="cdf",
+				    fmask=fmask,
+                 		    sel.period=sel.period.nat,
+				    ref.period=ref.period)
   } # for model_dix
   cmip5_each_nat <- cmip5_each_nat*100                                                    # Probability
  } # if variable
  # Each model average
  cmip5_name_nat <- unique(cmip5_name[grep("_historicalNat_",template)])
  each_model_cmip5_each_nat <- matrix(NA,length(cmip5_name_nat),
- 		                                 (sel.period.nat[2]-sel.period.nat[1]+1)/5)
+ 		                     (sel.period.nat[2]-sel.period.nat[1]+1)/5)
  for(model_idx in c(1:length(cmip5_name_nat))){
   each_model_value <- cmip5_each_nat[ grep(cmip5_name_nat[model_idx],
- 		                                  grep("_historicalNat_",template,value=T)) ,]
+ 		                      grep("_historicalNat_",template,value=T)) ,]
   if(!is.null(nrow(each_model_value))){
    each_model_cmip5_each_nat[model_idx,] <- apply(each_model_value,2,mean)
   }else{
@@ -290,7 +289,7 @@ for( variable in c("TXx","Rx1day") ){
 
  # CMIP6 file list (climdex data)
  template <- paste0(
-  	tolower(variable),
+    tolower(variable),
     "ETCCDI_yr_",
     cmip6_name,
     "_",
@@ -298,8 +297,8 @@ for( variable in c("TXx","Rx1day") ){
     "_",
     cmip6_ensemble,
     "_",
-	  cmip6_grid,
- 	"_",
+    cmip6_grid,
+    "_",
     cmip6_start_year,
     "-",
     cmip6_end_year,
@@ -335,7 +334,7 @@ for( variable in c("TXx","Rx1day") ){
                       cmip6_ensemble[cmip6_experiment == "hist-nat"],
                       "_",
                      	cmip6_grid[cmip6_experiment == "hist-nat"],
-                    	"_",
+                      "_",
                       sel.period.nat[1],
                       "-",
                       sel.period.nat[2],
@@ -346,7 +345,7 @@ for( variable in c("TXx","Rx1day") ){
  work_dir <- "./input/CMIP6/"
  historical_file <- paste0(work_dir,template[grep("_historical_",template)])
  ssp245_file <- paste0(work_dir,template[grep("_ssp245_",template)])
-historicalNat_file <-  paste0(work_dir,template[grep("_hist-nat_",template)])
+ historicalNat_file <-  paste0(work_dir,template[grep("_hist-nat_",template)])
  
  # Fitting GEV for only Rx1day
  if( variable == "Rx1day" ){
@@ -407,10 +406,10 @@ historicalNat_file <-  paste0(work_dir,template[grep("_hist-nat_",template)])
  # Each model average
  cmip6_name_all <- unique(cmip6_name[grep("_historical_",template)])
  each_model_cmip6_each_all <- matrix(NA,length(cmip6_name_all),
-      		                           (sel.period[2]-sel.period[1]+1)/5)
+      		                     (sel.period[2]-sel.period[1]+1)/5)
  for(model_idx in c(1:length(cmip6_name_all))){
   each_model_value <- cmip6_each_all[ grep(cmip6_name_all[model_idx],
- 		                                  grep("_historical_",template,value=T)) ,]
+ 		                      grep("_historical_",template,value=T)) ,]
   if(!is.null(nrow(each_model_value))){
    each_model_cmip6_each_all[model_idx,] <- apply(each_model_value,2,mean)
   }else{
@@ -442,10 +441,10 @@ historicalNat_file <-  paste0(work_dir,template[grep("_hist-nat_",template)])
  # Each model average
  cmip6_name_nat <- unique(cmip6_name[grep("_hist-nat_",template)])
  each_model_cmip6_each_nat <- matrix(NA,length(cmip6_name_nat),
- 		                                 (sel.period[2]-sel.period[1]+1)/5)
+ 		                     (sel.period[2]-sel.period[1]+1)/5)
  for(model_idx in c(1:length(cmip6_name_nat))){
   each_model_value <- cmip6_each_nat[ grep(cmip6_name_nat[model_idx],
- 		                                  grep("_hist-nat_",template,value=T)) ,]
+ 		                      grep("_hist-nat_",template,value=T)) ,]
   if(!is.null(nrow(each_model_value))){
    each_model_cmip6_each_nat[model_idx,] <- apply(each_model_value,2,mean)
   }else{
@@ -464,22 +463,22 @@ historicalNat_file <-  paste0(work_dir,template[grep("_hist-nat_",template)])
                                    lb=cmip5_all_lb,
                                    ub=cmip5_all_ub)
   cmip6_all_txx_each <- data.frame(model=rep(dummy_all_list,each=(sel.period[2]-sel.period[1]+1)/5),
- 		                               yr=seq(1955,2015,5),
+ 		                   yr=seq(1955,2015,5),
                                    y=as.numeric(t(each_model_cmip6_each_all)))
   txx_obs_and_mme_all <- data.frame(project=rep(LETTERS[1:3],each=(sel.period[2]-sel.period[1]+1)/5), 
- 		                                yr=seq(1955,2015,5),
- 									                  y=c(cmip6_mme_all,cmip5_mme_all,obs_value))
+ 		                   yr=seq(1955,2015,5),
+ 				   y=c(cmip6_mme_all,cmip5_mme_all,obs_value))
   # Data frame for NAT
   dummy_nat_list <- paste0("A",formatC(c(1:length(cmip6_name_nat)),flag="0",width=2))
   cmip5_nat_txx_rng  <- data.frame(yr=seq(1955,2015,5),
                                    lb=c(cmip5_nat_lb,NA),
                                    ub=c(cmip5_nat_ub,NA))
   cmip6_nat_txx_each <- data.frame(model=rep(dummy_nat_list,each=(sel.period[2]-sel.period[1]+1)/5),
- 		                               yr=seq(1955,2015,5),
+                                   yr=seq(1955,2015,5),
                                    y=as.numeric(t(each_model_cmip6_each_nat)))
   txx_obs_and_mme_nat <- data.frame(project=rep(LETTERS[1:3],each=(sel.period[2]-sel.period[1]+1)/5), 
-		                                yr=seq(1955,2015,5),
-  									                y=c(cmip6_mme_nat,c(cmip5_mme_nat,NA),obs_value))
+		                    yr=seq(1955,2015,5),
+  				    y=c(cmip6_mme_nat,c(cmip5_mme_nat,NA),obs_value))
   txx_ncmip5_all <- length(cmip5_name_all)
   txx_ncmip5_nat <- length(cmip5_name_nat)
   txx_ncmip6_all <- length(cmip6_name_all)
@@ -491,22 +490,22 @@ historicalNat_file <-  paste0(work_dir,template[grep("_hist-nat_",template)])
                                       lb=cmip5_all_lb,
                                       ub=cmip5_all_ub)
   cmip6_all_rx1day_each <- data.frame(model=rep(dummy_all_list,each=(sel.period[2]-sel.period[1]+1)/5),
- 		                                  yr=seq(1955,2015,5),
+ 		                      yr=seq(1955,2015,5),
                                       y=as.numeric(t(each_model_cmip6_each_all)))
   rx1day_obs_and_mme_all <- data.frame(project=rep(LETTERS[1:3],each=(sel.period[2]-sel.period[1]+1)/5), 
- 		                                   yr=seq(1955,2015,5),
- 									                     y=c(cmip6_mme_all,cmip5_mme_all,c(obs_value,NA)))
+ 		                       yr=seq(1955,2015,5),
+                                       y=c(cmip6_mme_all,cmip5_mme_all,c(obs_value,NA)))
   # Data frame for NAT
   dummy_nat_list <- paste0("A",formatC(c(1:length(cmip6_name_nat)),flag="0",width=2))
   cmip5_nat_rx1day_rng  <- data.frame(yr=seq(1955,2015,5),
                                       lb=c(cmip5_nat_lb,NA),
                                       ub=c(cmip5_nat_ub,NA))
   cmip6_nat_rx1day_each <- data.frame(model=rep(dummy_nat_list,each=(sel.period[2]-sel.period[1]+1)/5),
- 		                                  yr=seq(1955,2015,5),
+                                      yr=seq(1955,2015,5),
                                       y=as.numeric(t(each_model_cmip6_each_nat)))
   rx1day_obs_and_mme_nat <- data.frame(project=rep(LETTERS[1:3],each=(sel.period[2]-sel.period[1]+1)/5), 
- 		                                   yr=seq(1955,2015,5),
- 									                     y=c(cmip6_mme_nat,c(cmip5_mme_nat,NA),c(obs_value,NA)))
+                                       yr=seq(1955,2015,5),
+                                       y=c(cmip6_mme_nat,c(cmip5_mme_nat,NA),c(obs_value,NA)))
   rx1day_ncmip5_all <- length(cmip5_name_all)
   rx1day_ncmip5_nat <- length(cmip5_name_nat)
   rx1day_ncmip6_all <- length(cmip6_name_all)
@@ -554,7 +553,7 @@ p_txx_all <- ggplot() +
              xlab("Year") +
              ylab(expression(bold("TXx ("*~degree*C*")"))) + 
              common + 
-     			   annotate("text",x=1969,y=2.4,size=7,label="Natural and Human forcing")
+             annotate("text",x=1969,y=2.4,size=7,label="Natural and Human forcing")
 
 p_txx_nat <- ggplot() + 
              geom_ribbon(data=cmip5_nat_txx_rng,aes(x=yr,ymin=lb,ymax=ub),
@@ -578,7 +577,7 @@ p_txx_nat <- ggplot() +
              xlab("Year") +
              ylab(expression(bold("TXx ("*~degree*C*")"))) + 
              common + 
-			       annotate("text",x=1961,y=2.4,size=7,label="Natural forcing")
+             annotate("text",x=1961,y=2.4,size=7,label="Natural forcing")
 
 p_rx1day_all <- ggplot() + 
                 geom_ribbon(data=cmip5_all_rx1day_rng,aes(x=yr,ymin=lb,ymax=ub),
@@ -601,7 +600,7 @@ p_rx1day_all <- ggplot() +
                 scale_y_continuous(limit=c(-5,10),breaks=seq(-5,10,5)) +
                 xlab("Year") +
                 ylab("Rx1day (%)") +
-             		common + 
+                common + 
                 annaotate("text",x=1969,y=10,size=7,label="Natural and Human forcing")
 
 p_rx1day_nat <- ggplot() + 
@@ -625,7 +624,7 @@ p_rx1day_nat <- ggplot() +
                 scale_y_continuous(limit=c(-5,10),breaks=seq(-5,10,5)) +
                 xlab("Year") +
                 ylab("Rx1day (%)") +
-         			  common + 
+                common + 
                 annotate("text",x=1961,y=10,size=7,label="Natural forcing")
 
 plot_dir <- paste0("./Figures/")
