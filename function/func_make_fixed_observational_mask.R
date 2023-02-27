@@ -38,12 +38,12 @@ fixed_mask <- function(
     if(sum(!is.na(val[ix,iy,c(loc.syr:loc.eyr)])) >= ceiling(nyr*0.7) & 
        sum(!is.na(val[ix,iy,c((loc.eyr-4):loc.eyr)])) >= 3 ){
       mask[ix,iy] <- 1
-	}
+    } # if
    }else if( out_variable == "Rx1day" | out_variable == "rx1day" ){
     if(sum(!is.na(val[ix,iy,c(loc.syr:loc.eyr)])) >= ceiling(nyr*0.7) & 
        sum(!is.na(val[ix,iy,c((loc.eyr-3):loc.eyr)])) >= 2 ){
       mask[ix,iy] <- 1
-    } 
+    } # if 
    } # if out_variable
   } # for ix
  } # for iy
