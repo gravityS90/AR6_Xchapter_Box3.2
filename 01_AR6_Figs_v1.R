@@ -38,7 +38,7 @@ for( variable in c("TXx","Rx1day") ){
  
  # Make fixed mask
  fmask <- paste0(output_dir,
-        "Fixed_mask70_",
+                 "Fixed_mask70_",
  				variable,
  				"_",
  				obs,
