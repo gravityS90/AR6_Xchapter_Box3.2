@@ -2,53 +2,53 @@ library(ncdf4)
 
 # Preprocess for observational data
 preproc_obs <- function(file,                                                 # Input file
-						in_variable,                                                      # Input variable
-						out_variable,                                                     # Output variable
-						fmask,                                                            # Fixed mask of OBS
-						obs.period,                                                       # Input period
-						sel.period){                                                      # Output period
+                        in_variable,                                                      # Input variable
+                        out_variable,                                                     # Output variable
+                        fmask,                                                            # Fixed mask of OBS
+                        obs.period,                                                       # Input period
+                        sel.period){                                                      # Output period
  # Masking
  obs_var  <- cdo("selvar",
-		         args=in_variable,
-   				   input=file,
-				     options="-s -O")
+                 args=in_variable,
+                 input=file,
+                 options="-s -O")
  obs_cal  <- cdo("setcalendar",
-		         args="standard",
-				     input=obs_var,
-   				   options="-s -O")
+                 args="standard",
+                 input=obs_var,
+                 options="-s -O")
  obs_tim  <- cdo("setreftime",
-		         args=paste0(obs.period[1],"-07-16,00:00:00"),
-				     input=obs_cal,
-				     options="-s -O")
+                 args=paste0(obs.period[1],"-07-16,00:00:00"),
+                 input=obs_cal,
+                 options="-s -O")
  obs_prd  <- cdo("selyear",
-		         args=paste0(sel.period[1],"/",sel.period[2]),
-		         input=obs_tim,
-			    	 options="-s -O")
+                 args=paste0(sel.period[1],"/",sel.period[2]),
+                 input=obs_tim,
+                 options="-s -O")
  obs_name <- cdo("chname",
-		         args=paste0(in_variable,",",out_variable),
-				     input=obs_prd,
-				     options="-s -O")
+                 args=paste0(in_variable,",",out_variable),
+                 input=obs_prd,
+                 options="-s -O")
  obs_in   <- cdo("mul",
-		         input=c(obs_name,fmask),
-				     options="-s -O")
+                 input=c(obs_name,fmask),
+                 options="-s -O")
  # Make 5-yr averaged time series of anomaly
  obs_rprd <- cdo("selyear",
-		         args=paste0(ref.period[1],"/",ref.period[2]),
-				     input=obs_in,
-				     options="-s -O")
+                  args=paste0(ref.period[1],"/",ref.period[2]),
+                  input=obs_in,
+                  options="-s -O")
  obs_clim <- cdo("timmean",
-		         input=obs_rprd,
-				     options="-s -O")
+                 input=obs_rprd,
+                 options="-s -O")
  obs_ano  <- cdo("sub",
-		         input=c(obs_in,obs_clim),
-				     options="-s -O")
+                 input=c(obs_in,obs_clim),
+                 options="-s -O")
  obs_fld  <- cdo("fldmean",
-		         input=obs_ano,
-				     options="-s -O")
+                 input=obs_ano,
+                 options="-s -O")
  obs_ave  <- cdo("timselmean",
-		         args=5,
-				     input=obs_fld,
-				     options="-s -O")
+                 args=5,
+                 input=obs_fld,
+                 options="-s -O")
  input_obs <- ncvar_get(nc_open(obs_ave),out_variable)
  unlink(c(obs_var,
           obs_cal,
@@ -67,13 +67,13 @@ preproc_obs <- function(file,                                                 # 
 
 # Preprocess for model data (Splitted data)
 preproc_model_splitted <- function(
-                       file1,                                                 # Input file1
-			     				     file2,                                                 # Input file2
-            				   variable,                                              # Input variable
-            	   		   fmask,                                                 # Fixed mask of OBS
-								       end.yr,                                                # Last year of file1
- 						           sel.period,                                            # Output period
-						           ref.period){                                           # Reference period
+                                   file1,                                                 # Input file1
+                                   file2,                                                 # Input file2
+                                   variable,                                              # Input variable
+                                   fmask,                                                 # Fixed mask of OBS
+                                   end.yr,                                                # Last year of file1
+                                   sel.period,                                            # Output period
+                                   ref.period){                                           # Reference period
  # Preprocessing for first file
  file1_copy <- cdo("copy",
                    input=file1,
@@ -127,14 +127,13 @@ preproc_model_splitted <- function(
 }
 
 
-
 # Preprocess for model data (Non-splitted data)
 preproc_model_nsplitted <- function(
-                  file,                                                 # Input file
-                  variable,                                             # Input variable
-									fmask,                                                # Fixed mask of OBS
-									sel.period,                                           # Output period
-									ref.period){                                          # Reference period
+                                    file,                                                 # Input file
+                                    variable,                                             # Input variable
+                                    fmask,                                                # Fixed mask of OBS
+                                    sel.period,                                           # Output period
+                                    ref.period){                                          # Reference period
  # Masking 
  file_copy <- cdo("copy",
                   input=file,
@@ -168,7 +167,6 @@ preproc_model_nsplitted <- function(
                   input=file_fld,
                   options="-s -O")
  input_file <- ncvar_get(nc_open(file_ave),variable)
- unlink(c(file_copy,file_prd,file_mask,file_in,file_ref,
-		  file_clim,file_ano,file_fld,file_ave))
+ unlink(c(file_copy,file_prd,file_mask,file_in,file_ref,file_clim,file_ano,file_fld,file_ave))
  return(input_file)
 }
